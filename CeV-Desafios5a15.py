@@ -133,4 +133,6 @@ def aluguel_car():
     km = float(input('Digite quantos KM foi percorrido/percorrerá neste período:'))
     print('')
     print(f'O valor a ser pago é R${(dias * 60) + (km * 0.15) :.2f}!\nR${dias * 60}'
-          f' pelos dias alugados!\n10R${km * 0.15} pelos Km rodados!')
+          f' pelos dias alugados!\nR${km * 0.15} pelos Km rodados!')
+
+aluguel_car()

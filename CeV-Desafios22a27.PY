@@ -1,6 +1,6 @@
 # Desafio22 Crie um programa que leia o nome completo de uma pessoa e mostre:
-"""O nome com todas as letras maiúsculas, O nome com todas minúsculas, Quantas letras ao
-todo sem considerar espaços, Quantas letras tem o primeiro nome"""
+# O nome com todas as letras maiúsculas, O nome com todas minúsculas, Quantas letras ao
+# tem sem considerar espaços, Quantas letras tem o primeiro nome
 
 
 def conta_nome():
@@ -27,11 +27,11 @@ def conta_nome():
 # Desafio23 Faça um programa que leia 0 a 9999 e mostre na tela cada um dos dígitos separados ex: 1834 unidade: 4
 # dezena: 3 centenas: 8 milhares: 1
 
-'''def conta_unidade(): usando estrutura de repetição print('') print('Aqui iremos mostras quantas unidades tem cada 
-ordem de um número de o a 9999!') print('') num = int(input('Digite um número de 0 a 9999:')) num_str = str(num) 
-print('') print(f'O número {num} tem') print('') print(f'Unidade:{num_str[-1]}')#Usando o -1 eu determino qual índice 
-da str vai ser imprimido -1 o último -2 o penúltimo e assim por diante print(f'Dezena:{num_str[-2]}') print(
-f'Centena:{num_str[-3]} ') print(f'Milhar:{num_str[-4]}')'''
+# def conta_unidade(): usando estrutura de repetição print('') print('Aqui iremos mostras quantas unidades tem cada
+# ordem de um número de o a 9999!') print('') num = int(input('Digite um número de 0 a 9999:')) num_str = str(num)
+# ('') print(f'O número {num} tem') print('') print(f'Unidade:{num_str[-1]}')#Usando o -1 eu determino qual índice
+# da str vai ser imprimido -1 o último -2 o penúltimo e assim por diante print(f'Dezena:{num_str[-2]}') print(
+# f'Centena:{num_str[-3]} ') print(f'Milhar:{num_str[-4]}')'''
 
 
 def conta_unidade():  # Usando matemática

@@ -1,4 +1,5 @@
-# split() foi usado para dividir uma str em palavras levando em consideração os espaços como divisória , mas também podemos definir dentro dos () o que sera o divisor das palavras como por exemplo ('-')
+# split() foi usado para dividir uma str em palavras levando em consideração os espaços como divisória , mas também
+# podemos definir dentro dos () o que sera o divisor das palavras como por exemplo ('-')
 # e len() nos mostra quantos caracteres tem 
 def conta_palavras(texto):
     conta_palavras = texto.split()
