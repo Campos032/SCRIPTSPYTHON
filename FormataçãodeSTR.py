@@ -1,12 +1,13 @@
 # Podemos usar os operados aritméticos para formatação de str e aqui teremos alguns exemplos como por exemplo
 print('30' * 30)
-# E também temos que saber que no python tem formas diferentes de se formatar uma str dependendo da versão ,na 3.6 adiante podemos usar o
-# print(f''), já anteriormente usava-se .format(x, y, u), e ainda mais antes usava-se por exemplo %f para float e %d para int
-print()
+# E também temos que saber que no python tem formas diferentes de se formatar uma str dependendo da versão, na 3.6
+# adiante podemos usar o print(f''), já anteriormente usava-se .format(x, y, u), e ainda mais antes usava-se,
+# por exemplo, %f para float e %d para int
 # No print f podemos fazer do seguinte jeito [print(f'Seu {nome:20}')Isso irá escrever o nome em 20 espaços]
 # Se usarmos {nome:<20} Isso irá alinhar a esquerda e criar 20 espaços depois
 # Se usarmos {nome:>20} Isso irá alinhar a direita e criar 20 espaços antes
-# Se usarmos {nome:^20} Isso irá centralizar nome, e também podemos usar nome:-^20 que irá preencher os espaços e centralizar nome
+# Se usarmos {nome:^20} Isso irá centralizar nome, e também podemos usar nome:-^20 que irá preencher os espaços e
+# centralizar nome
 # Podemos utilizar {soma:.4f} para limitar a 4 casas decimais o resultado
 # Para não quebrar a linha utilizamos end=''
 # Para quebrar linha utilizamos \n, por exemplo print(f'O nome dela é \n Joana ')

@@ -1,4 +1,4 @@
-# Certamente, aqui estão alguns exemplos de laços `for` em Python:
+# Certamente, aqui estão alguns exemplos de laços 'for' em Python:
 
 # 1. **Iterando sobre uma Lista
 # python
@@ -35,7 +35,7 @@ estudante_notas = {'Alice': 90, 'Bob': 80, 'Charlie': 95}
 for aluno, nota in estudante_notas.items():
     print(f'{aluno}: {nota}')
 
-# Estes são apenas alguns exemplos, e o `for` em Python é bastante flexível, podendo ser utilizado em várias situações
+# Estes são apenas alguns exemplos, e o 'for' em Python é bastante flexível, podendo ser utilizado em várias situações
 # para iterar sobre diferentes tipos de dados.
 
 frase = str(input('Escreva uma frase:')).lower()

@@ -71,13 +71,13 @@ print('Estou aprendendo a programar, mais especificamente aprendendo sobre funç
 lin()
 
 
-def título(texto):
+def titulo(texto):
       print('-' * 30)
       print(texto)
       print('-' * 30)
 
 
-título('My name is')
+titulo('My name is')
 
 #Aqui iremos empacotar parâmetros(* x), uma das exclusividades do python e que eu não tenho certeza se mais alguma linguagem possui essa função, ele irá se virar para verificar quantos parâmetros foi adicionado a linha
 def contador(* num):
@@ -89,8 +89,8 @@ contador(2, 3.4, 5, 9.8)
 contador(2, 3)
 
 #para cada valor em num fazer escrever o valor em linha
-def contador1(* núm):
-      for valor in núm:
+def contador1(* num):
+      for valor in num:
           print(f'{valor} ', end='')
       print('FIM!')
       
@@ -99,7 +99,7 @@ contador1(5, 5, 6, 7, 8)
 contador1(2, 3.4, 5, 9.8)
 contador1(2, 3)
 
-#A função len , quando aplicada a um string, retorna o número de caracteres no string (ou seja, o seu comprimento).
+#A função len, quando aplicada a uma string, retorna o número de caracteres da string (ou seja, o seu comprimento).
 def contador2(* num1):
     tam = len(num1)
     print(f'Recebi os valores {num1} e são ao todo {tam} números!')

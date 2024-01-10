@@ -16,13 +16,13 @@ def soma():
     print('')
 
 
-def subtração():
+def subtracão():
     print('')
     print('A subtração entre dois números é igual a')
     n1 = float(input('Digite o 1° número:'))
     n2 = float(input('Digite o 2° número:'))
-    resultSu = n1 - n2
-    print(f'O resultado da soma entre {n1} e {n2} é igual a {resultSu}!')
+    resultsu = n1 - n2
+    print(f'O resultado da soma entre {n1} e {n2} é igual a {resultsu}!')
     print('')
 
 
@@ -47,8 +47,8 @@ def divisão():
         print('')
         return
     # return foi usado como repetidor, para retornar o programa já que foi encontrado algo não possível de ser feito
-    resultD = n1 / n2
-    print(f'O resultado da divisão entre {n1} e {n2} é igual a {resultD}!')
+    resultd = n1 / n2
+    print(f'O resultado da divisão entre {n1} e {n2} é igual a {resultd}!')
     print('')
 
 
@@ -75,7 +75,7 @@ while True:
         soma()
 
     elif escolha == 2:
-        subtração()
+        subtracão()
 
     elif escolha == 3:
         multiplicação()

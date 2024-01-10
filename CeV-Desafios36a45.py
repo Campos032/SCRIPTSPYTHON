@@ -326,12 +326,12 @@ def imc_calculator():  # IMC = peso(kg) / [altura x altura(m)]
         print(f'{cores["verde"]}Parabéns, você está no seu peso ideal!{cores["termina"]}')
         print(f'{cores["roxo"]}IMC = {peso / (altura * altura):.1f}{cores["termina"]}')
 
-    elif 25 < peso / (altura * altura) < 30:
+    elif 25 < peso / (altura * altura) < 30:# Condição simples
         print(f'{cores["amarelo"]}Nem tão ruim nem tão bom, você está com sobrepeso, busque melhorar seus hábitos!'
               f'{cores["termina"]}')
         print(f'{cores["roxo"]}IMC = {peso / (altura * altura):.1f}{cores["termina"]}')
 
-    elif peso / (altura * altura) > 30 and peso / (altura * altura) < 40:
+    elif peso / (altura * altura) > 30 and peso / (altura * altura) < 40: # Condição complexa
         print(f'{cores["vermelho"]}Você já está passando dos limites do seu corpo e se encontra Obeso,'
               f' busque ajuda de um profissional!'
               f'{cores["termina"]}')

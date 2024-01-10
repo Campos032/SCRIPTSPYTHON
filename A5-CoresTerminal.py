@@ -13,7 +13,7 @@ print('\033[4;35mPython é foda!\033[m')
 #print(f'O primeiro número é \033[1;31m{p1}\033[m e o segundo número é \033[1;31m{p2}\033[m!')
 
 # Criando um 'dicionário' das cores
-# As cores variam de acordo com o tema da IDE
+# As cores variam conforme o tema da IDE
 
 cores = {"branco": '\033[0;30m',
          "vermelho": '\033[0;31m',

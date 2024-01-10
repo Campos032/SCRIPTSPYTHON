@@ -97,7 +97,7 @@ def qnt_tinta():
 
 
 # Desafio12 Faça um algorítimo que leia o preço de um produto e mostre o novo preço com 5% de desconto
-def preco_e_5porcento():
+def preço_e_5porcento():
     print('')
     print('Calculo do Valor - 5%')
     print('')

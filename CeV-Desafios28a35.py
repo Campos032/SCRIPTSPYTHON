@@ -1,26 +1,6 @@
-# Operadores de condição em python (==)verifica igualdade. Retorna True se os operandos forem iguais.
-# x == y # True se x for igual a y
-# !=: verifica desigualdade. Retorna True se os operandos não forem iguais.
-# x != y # True se x for diferente de y
-# <: verifica se o operando esquerdo é menor que o operando direito.
-# x < y # True se x for menor que y
-# <=: verifica se o operando esquerdo é menor ou igual ao operando direito.
-# x <= y # True se x for menor ou igual a y
-# >: verifica se o operando esquerdo é maior que o operando direito.
-# x > y # True se x for maior que y
-# >=: verifica se o operando esquerdo é maior ou igual ao operando direito.
-# x >= y # True se x for maior ou igual a y
-# in: verifica se um elemento está presente em uma sequência (como uma lista, tupla, conjunto ou string).
-# x in lista # True se x estiver na lista
-# Not in: verifica se um elemento não está presente em uma sequência.
-# x not in lista # True se x não estiver na lista
-# is: Verifica se dois objetos têm a mesma identidade (referem-se ao mesmo objeto na memória).
-# x is y # True se x e y referirem-se ao mesmo objeto
-# is not: verifica se dois objetos não têm a mesma identidade.
-# x is not y # True se x e y não referirem-se ao mesmo objeto
-# if(se) if x < y print(x é menor que y)
-# elif ou else if(se naõ for tente) elif x > z print(x é maior que z)
-# else(senão) else x > z print(x não é maior que z)
+import random
+import time
+import datetime
 
 
 cores = {"branco": '\033[0;30m',
@@ -45,11 +25,6 @@ cores = {"branco": '\033[0;30m',
 
 # Desafio28 Escreva um programa que faça o computador escolher um número inteiro de 0 a 5, e peça pro usuário tentar
 # Adivinhar, e o programe escreva na tela se o usuário acertou ou não
-import random
-import time
-import datetime
-
-
 
 def adivinha_num():
     print('')
@@ -68,7 +43,7 @@ def adivinha_num():
         print('O número era:', num_aleatorio, "!")
         print('-' * 30)
 
-    # elif num != (0, 5): ou if num is None:
+    # elif num!= (0, 5): ou if num is None:
     # print('Erro, número inválido!')
     # print('-' * 30)
 

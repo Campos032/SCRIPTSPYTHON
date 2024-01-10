@@ -16,7 +16,8 @@ def ex_num():
  print('4**3 =',ex4)
  ex5 = 16%2
  print('16%2 =',ex5)
- ex6 = 16**(1/2)#Fazendo assim consegimos descobrir a raiz quadrada de 16 se fosse 16**(1/3) teriamos a raiz cubica e assim por diante
+ ex6 = 16**(1/2)#Fazendo assim conseguimos descobrir a raiz quadrada de 16 se fosse 16**(1/3) teríamos a raiz cúbica e
+ # assim por diante
  print('16**(1/2) =',ex6)
  ex7 = pow(2, 5)#pow é uma função do python usada para calcular a potência
  print('pow(2, 5) =',ex7)

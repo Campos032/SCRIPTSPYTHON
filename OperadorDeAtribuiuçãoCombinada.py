@@ -6,7 +6,7 @@
 # Neste exemplo, x += y adiciona o valor de y a x e atribui o resultado de volta a x. O mesmo conceito se aplica a
 # outros operadores aritméticos, como -, *, /, etc.
 
-# Essa notação é útil para tornar o código mais conciso e legível, especialmente quando você está atualizando variáveis
+# Essa notação permite tornar o código mais conciso e legível, especialmente quando você está atualizando variáveis
 # com base em seus próprios valores anteriores.
 
 x = 5

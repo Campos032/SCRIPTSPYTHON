@@ -1,15 +1,15 @@
 #Fatiamento
 
 frase = 'Pythonn'
-        #0123456   Esses são os microespaços que está armazenada a STR
+        #0123456 Esses são os microespaços que está armazenada a STR
 print(frase) # Apenas vai printar a frase
 print(frase[4])# Vai mostrar o índice 4 da STR
 print(frase[:5])# Vai mostrar todos até o 5 exceto o 5
 print(frase[0:3])# Vai mostrar todos do 0 ao 2 exceto o 3
 print(frase[1:5])#Vai mostrar todos do 1 ao 4
-print(frase[0:7:2])#Vai mostrar do 0 ao 6, contando de 2 em 2
+print(frase[0:7:2])#Vai mostrar do 0 ao 6, contando a cada 2
 print(frase[0:])#Vai mostrar todos a partir do zero
-print(frase[0::2])#Vai mostrar do 0 ao 6, contando de 2 em 2
+print(frase[0::2])#Vai mostrar do 0 ao 6, contando a cada 2
 
 #Análise
 
@@ -35,13 +35,13 @@ print('Pyt' in frase2)
 print(frase2.replace('Pyt','Day'))#isso irá trocar um pelo outro criando umanova string e não mudando a antiga
 print(frase2.upper())#upper transformará todas as letras em maiúsculas
 print(frase2.lower())#e lower em minúsculas
-print(frase2.capitalize())#capitalize transformará apenas a 1° letra da str em maiúscula
+print(frase2.capitalize())#capitalize transformará apenas a 1.º letra da str em maiúscula
 print(frase2.title())#title transormará todas as letras no início de cada palavra em maiúsculas
 print(frase2.strip())#strip(rstrip removerá apenas os espaços da esquerda e lstrip removerá apenas os sepaços da esquerda) remove todos os espaços inúteis em uma str, tanto no começo da quanto no final
 
 #Divisão
 
-print(frase2.split())#split divide a str de acordo com o parâmetro que voce utilizou
+print(frase2.split())#split divide a str conforme o parâmetro que voce utilizou
 
 #Junção
 
