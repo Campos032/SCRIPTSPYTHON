@@ -41,6 +41,6 @@ for aluno, nota in estudante_notas.items():
 frase = str(input('Escreva uma frase:')).lower()
 frase_sem_espaços = frase.replace(' ', '')
 reversestr = ''
-for letras in range(len(frase_sem_espaços) -1, -1, -1):
+for letras in range(len(frase_sem_espaços) - 1, -1, -1):
     reversestr += frase_sem_espaços[letras]
 print(reversestr)

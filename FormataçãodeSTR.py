@@ -13,7 +13,7 @@ print('30' * 30)
 # Para quebrar linha utilizamos \n, por exemplo print(f'O nome dela é \n Joana ')
 nome = 'Júnior'
 idade = 18
-print(f'Meu nome é \nJúnior \ne tenho 18 anos',end='!')
+print(f'Meu nome é \nJúnior \ne tenho 18 anos', end='!')
 print('')
 # Podemos utilizar aspas triplas para escrever um multilinhas já com quebra de linhas
 mensagem = ''' 
@@ -22,6 +22,7 @@ Mas também muito versátil
 Eu recomendo
 '''
 print(mensagem)
+
 
 def f1():
     print('')
@@ -37,6 +38,7 @@ def f1():
     p = n1 ** n2
     di = n1 // n2
     dr = n1 % n2
-    print(f'A soma entre {n1} e {n2} é igual a {s}!\nA subtração é igual á {sb}!\nA multiplicação é igual á {m}!\nA divisão é igual a {d}!\nA potência é igual a {p}!\nA divisão inteira é igual a {di}!\nE o resto da divisão é igual a {dr}!')
-
-
+    print(
+        f'A soma entre {n1} e {n2} é igual a {s}!\nA subtração é igual á {sb}!\nA multiplicação é igual á {m}!'
+        f'\nA divisão é igual a {d}!\nA potência é igual a {p}!\nA divisão inteira é igual a {di}!'
+        f'\nE o resto da divisão é igual a {dr}!')

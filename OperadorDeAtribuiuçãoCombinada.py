@@ -18,4 +18,4 @@ a = 5
 c = 4
 
 a *= c  # a = a * c
-print(a) # Resultado = 20
+print(a)  # Resultado = 20

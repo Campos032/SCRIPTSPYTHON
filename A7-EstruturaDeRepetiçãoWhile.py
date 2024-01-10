@@ -73,10 +73,3 @@ while saldo_conta < 2000:
     anos += 1
 
 print(f"Demorou {anos} anos para o saldo atingir 2000.")'''
-
-
-
-
-
-
-

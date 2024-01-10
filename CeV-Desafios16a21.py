@@ -1,3 +1,8 @@
+import math
+import random
+import sys
+import playsound
+
 cores = {"branco": '\033[0;30m',
          "vermelho": '\033[0;31m',
          "verde": '\033[0;32m',
@@ -17,13 +22,8 @@ cores = {"branco": '\033[0;30m',
          "termina": '\033[m',
          "pretoebranco": '\033[7;30m'}
 
+
 # Desafio16 Crie um programa que leia um número escolhido pelo usuário e mostre apenas sua porção inteira
-import math
-import random
-import sys
-import playsound
-
-
 def num_int():
     print('')
     num = float(input('Digite um número qualquer e receberá sua porção inteira:'))
@@ -31,7 +31,8 @@ def num_int():
     print(f'A porção inteira de {num} é {math.trunc(num)}!')  # ou {int(num)}
 
 
-# Desafio17 Faça um programa que leia o comprimento do cateto oposto e adjacente de um triângulo retângulo, e mostre o comprimento da hipotenusa
+# Desafio17 Faça um programa que leia o comprimento do cateto oposto e adjacente de um triângulo retângulo, e mostre o
+# comprimento da hipotenusa
 
 def hip():
     print('')
@@ -57,7 +58,8 @@ def sen_cos_tan():
     print(f'O seno de {ang}° é {sen:.2f}!\nO cosseno é {cos:.2f}!\nA tangente é {tan:.2f}!')
 
 
-# Desafio19 Um professor quer sortear um de seus quatro alunos para apagar o quadro, crie um programa que leia os nomes e escolha um para o professor printando-o na tela
+# Desafio19 Um professor quer sortear um de seus quatro alunos para apagar o quadro, crie um programa que leia os nomes
+# e escolha um para o professor printando-o na tela
 
 def sorteio():
     print('')
@@ -67,14 +69,17 @@ def sorteio():
     print(random.choice(sort))
 
 
-# Desafio20 O professor támbem quer sortear a ordem de apresentação de trabalho do alunos, crie um programa que faça isso lendo os nomes e os printando na ordem aleatória
+# Desafio20 O professor támbem quer sortear a ordem de apresentação de trabalho dos alunos, crie um programa que faça
+# isso lendo os nomes e os printando na ordem aleatória
 
 def sorteio_da_ordem1():
     print('')
     print('Sorteio da Ordem de Apresentação')
     alunos = str(input('Escreva os nomes ou números que deseja sortear separando-os por vírgula:'))
-    sort = alunos.split(',')  # slipt vai separar a str de acordo com o parâmetro que voce usou para separar
-    random.shuffle(sort)  # random.shuffle apenas embaralha a lista e não cria uma nova lista embaralhada por isso print(sort) e não criar uma variável para random.shuffle
+    sort = alunos.split(',')  # slipt vai separar a str conforme o parâmetro que voce usou para separar
+    random.shuffle(
+        sort)  # random.shuffle apenas embaralha a lista e não cria uma nova lista embaralhada por isso print(sort) e
+    # não criar uma variável para random.shuffle
     print(sort)
 
 

@@ -8,9 +8,9 @@
 print('\033[1;30mPython é Foda!\033[m')
 print('\033[7;30mPython é foda!\033[m')
 print('\033[4;35mPython é foda!\033[m')
-#p1 = float(input('\033[1;31mDigite um número\033[m:'))
-#p2 = float(input('\033[1;31mDigite outro número\033[m:'))
-#print(f'O primeiro número é \033[1;31m{p1}\033[m e o segundo número é \033[1;31m{p2}\033[m!')
+# p1 = float(input('\033[1;31mDigite um número\033[m:'))
+# p2 = float(input('\033[1;31mDigite outro número\033[m:'))
+# print(f'O primeiro número é \033[1;31m{p1}\033[m e o segundo número é \033[1;31m{p2}\033[m!')
 
 # Criando um 'dicionário' das cores
 # As cores variam conforme o tema da IDE
@@ -32,6 +32,6 @@ cores = {"branco": '\033[0;30m',
          "fundoazulclaro": '\033[0;46m',
          "fundocinza": '\033[0;47m',
          "termina": '\033[m',
-         "pretoebranco": '\033[7;30m'} # e etc
+         "pretoebranco": '\033[7;30m'}  # e etc
 
 print(f'{cores["fundoazulclaro"]}Pythonando{cores["termina"]}')

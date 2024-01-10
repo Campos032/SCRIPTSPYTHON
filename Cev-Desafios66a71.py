@@ -26,7 +26,8 @@ print(f'{qnt_num} números foram inseridos!\nE a soma entre eles é igual a {som
     for i in range(0, 11):
         tab = num * i
         print(f'{num} x {i} = {tab}')"""
-    
+
+
 # Desafio 68 Faça um programa que jogue ímpar ou par com o computador. O jogo será interrompido quando o jogador
 # perder, mostrando o total de vitórias consecutivas que el conquistou no final do jogo.
 
@@ -103,6 +104,7 @@ def cadastro():
             print('Saindo!')
             time.sleep(1)
             break
+
 
 # Desafio 70 Crie um programa que leia o nome e o preço de vários produtos. O programa deverá perguntar se o usuário vai
 # continuar. No final, mostre: A-Qual é o total gasto na compra / B-Quantos produtos custam mais de R$1000 / C-Qual é o
@@ -182,9 +184,10 @@ def caixa_eletronico2():
     print(f'Voce receberá {qnt_notas50} nota(s) de R$50.\n{qnt_notas20} nota(s) de R$20.\n{qnt_notas10}'
           f' nota(s) de R$ 10\nE {qnt_notas1} nota(s) de R$1.')
 
+
 def solucao_video():
     print(30 * '=')
-    print(f'{"Banco CEV":^30}') # Só funciona com o uso de aspas duplas e simples ou vice versa
+    print(f'{"Banco CEV":^30}')  # Só funciona com o uso de aspas duplas e simples ou vice versa
     print(30 * '=')
     valor = int(input('Qual valor você quer sacar? R$'))
     total = valor
@@ -208,4 +211,3 @@ def solucao_video():
                 break
     print(30 * '=')
     print('Volte sempre ao Banco CEV! Tenha um bom dia!')
-

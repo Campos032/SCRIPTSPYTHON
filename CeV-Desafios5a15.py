@@ -17,6 +17,7 @@ cores = {"branco": '\033[0;30m',
          "termina": '\033[m',
          "pretoebranco": '\033[7;30m'}
 
+
 # Desafio5 Leia um Número inteiro e diga o seu sucessor e antecessor
 def num_ant_suc():
     print('')
@@ -28,6 +29,8 @@ def num_ant_suc():
 
 
 num_ant_suc()
+
+
 # Desafio6 Crie um Algorítimo que leia um número que mostre seu dobro, seu triplo e sua raiz quadrada
 def num_double_triple_and_squareroot():
     print('')
@@ -134,5 +137,6 @@ def aluguel_car():
     print('')
     print(f'O valor a ser pago é R${(dias * 60) + (km * 0.15) :.2f}!\nR${dias * 60}'
           f' pelos dias alugados!\nR${km * 0.15} pelos Km rodados!')
+
 
 aluguel_car()

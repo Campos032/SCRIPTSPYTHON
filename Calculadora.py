@@ -16,7 +16,7 @@ def soma():
     print('')
 
 
-def subtracão():
+def subtração():
     print('')
     print('A subtração entre dois números é igual a')
     n1 = float(input('Digite o 1° número:'))
@@ -75,7 +75,7 @@ while True:
         soma()
 
     elif escolha == 2:
-        subtracão()
+        subtração()
 
     elif escolha == 3:
         multiplicação()

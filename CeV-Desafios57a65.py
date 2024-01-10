@@ -11,7 +11,6 @@ while sexo not in 'MF':
     sexo = input('Dados inválidos, Por Favor, tente novammente: [M/F]').strip().upper()
 print(f'Sexo {sexo} registrado com sucesso!')"""
 
-
 # Minha Solução
 """while True:
     sexo = str(input('Digite seu sexo [M/F]:')).strip().upper()
@@ -46,6 +45,7 @@ while not acertou:
         elif jogador > computador:
             print('Menos... Tente mais uma vez.')"""
 
+
 # Minha Solução
 def adivinha():
     tentativas = 0
@@ -67,6 +67,7 @@ def adivinha():
             elif con_sa == 2:
                 print('Saindo!')
                 return
+
 
 # Desafio 59 Crie um programa que leia dois valores e mostre um menu na tela: [1]Somar [2]Multiplicar [3]Maior
 # [4]Novos números [5]Sair do programa seu programa devera realizar a operação solicitada em cada caso
@@ -109,7 +110,6 @@ while opcao != 5:
         print('Escolha inválida, tente novamente!')
         time.sleep(1)"""
 
-
 # Minha solução
 """while True:
     print(5 * ' ', 'Dois valores', 5 * ' ')
@@ -146,7 +146,6 @@ while opcao != 5:
     elif choice == 5:
         print('Saindo!')
         break"""
-
 
 # Desafio 60 Faça um programa que leia um número qualquer e mostre o seu fatorial, fatorial de 5! = 5x4x3x2x1 = 120
 
@@ -279,8 +278,8 @@ ia = an - 1  # Índice anterior
 
 r5 = math.sqrt(5)
 
-indice_do_termo = round((1/r5) * ((((1 + r5) / 2) ** an) - (((1 - r5) / 2) ** an)))  # Round foi usado para fazer o
-indice_anterior = round((1/r5) * ((((1 + r5) / 2) ** ia) - (((1 - r5) / 2) ** ia)))  # arrendondamento
+indice_do_termo = round((1 / r5) * ((((1 + r5) / 2) ** an) - (((1 - r5) / 2) ** an)))  # Round foi usado para fazer o
+indice_anterior = round((1 / r5) * ((((1 + r5) / 2) ** ia) - (((1 - r5) / 2) ** ia)))  # arrendondamento
 prox_termo = indice_do_termo + indice_anterior
 
 elementos_seguintes = [indice_do_termo, prox_termo]
@@ -292,8 +291,8 @@ while len(elementos_seguintes) - 2 < qnt_depois_do_indice_escolhido:
     elementos_seguintes.append(elemento_anterior)
 
 print(f'\nO termo referente ao índice que você indicou é {indice_do_termo}!\n\nO anterior é {indice_anterior}!\n')
-print(f'E os {qnt_depois_do_indice_escolhido} termos seguintes são ',' > '.join(map(str, elementos_seguintes[1::])),'!')
-
+print(f'E os {qnt_depois_do_indice_escolhido} termos seguintes são ', ' > '.join(map(str, elementos_seguintes[1::])),
+      '!')
 
 # Desafio 64 Crie um programa que leia vários números inteiros pelo teclado. O programa só vai parar quando o usuário
 # digitar o valor 999, que é a condição de parada. No final mostre quantos números foram digitados e qual foi a soma
@@ -307,7 +306,6 @@ while num != 999:
     cont += 1
     num = int(input('Digite um número [999 para sair]:'))
 print(f'Você digitou {cont} números e a soma entre eles foi {soma}.')"""
-
 
 # Minha solução
 """qnt_num = 0
@@ -343,7 +341,6 @@ while resp in 'sS':
 media = soma / quant
 print(f'Você digitou {quant} números e a média foi {media}.')
 print(f'O maior valor foi {maior} e o menor foi {menor}.')"""
-
 
 # Minha Solução
 """lis = []

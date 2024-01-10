@@ -18,6 +18,6 @@ i = int(input('Início:'))
 f = int(input('Fim:'))
 p = int(input('Passo:'))
 
-for c in(i, f, p):
+for c in (i, f, p):
     print(c)
 print('Fim')
