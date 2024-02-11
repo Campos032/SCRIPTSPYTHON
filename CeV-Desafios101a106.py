@@ -45,7 +45,7 @@ def fatorial_g():
 # tenha sido informado corretamente. 
 
 def ficha_g():
-    def ficha(nome=None, gols=None):
+    def ficha(nome='<desconhecido>', gols=0):
         print(f'Nome jogador - {nome}'
               f'\nQuantidade de gols - {gols}')
 
@@ -54,14 +54,54 @@ def ficha_g():
     ficha(name, goals)
 
 
-ficha_g()
-
 # Desafio 104 Crie um programa qie tenha uma função leiaInt() que vai funcionar de forma semelhante á função input()
 # do Python só que fazendo a validação para aceitar apenas um valor numérico. Ex: n = leiaInt('Digite um Número: ')
+def leia_int_g():
+    def leia_int(num):
+        inteiro = input(num)
+        while not inteiro.isdigit():
+            print('Erro, insira um valor valido!')
+            inteiro = input(num)
+        else:
+            return int(inteiro)
+
+    numero_inteiro = leia_int('Digite um número: ')
+    print(numero_inteiro, 'É um número inteiro!')
+
 
 # Desafio 105 Faça um programa que tenha uma função notas() que pode receber várias notas de alunos e vai retornar um
 # dicionário com as seguintes informações: - Quantidade de notas - A maior nota - A menor nota - A média da turma
-# - A situação Adicione também as docstrings da função
+# - A situação, Adicione também as docstrings da função
+def notas_g():
+    def notas(numero_cadastros):
+        cadastro_alunos = list()
+        cadastro_temporario = dict()
+        for aluno in range(1, numero_cadastros + 1):
+            print(f'Cadastro Aluno{aluno}')
+            cadastro_temporario['nome'] = str(input('Escreva o nome do aluno: '))
+            cadastro_temporario['nota1'] = float(input('Digite a nota1: '))
+            cadastro_temporario['nota2'] = float(input('Digite a nota2: '))
+            cadastro_alunos.append(cadastro_temporario.copy())
+            cadastro_temporario.clear()
+        print(f'Foram cadastradas {numero_cadastros * 2} notas')
+        maior_nota = 0
+        menor_nota = 999
+        total_notas = 0
+        for indice, cadastro in enumerate(cadastro_alunos):
+            total_notas += cadastro_alunos[indice]['nota1']
+            total_notas += cadastro_alunos[indice]['nota2']
+            if cadastro_alunos[indice]['nota1'] >= maior_nota:
+                maior_nota = cadastro_alunos[indice]['nota1']
+            if cadastro_alunos[indice]['nota2'] >= maior_nota:
+                maior_nota = cadastro_alunos[indice]['nota2']
+            if cadastro_alunos[indice]['nota1'] <= menor_nota:
+                maior_nota = cadastro_alunos[indice]['nota1']
+            if cadastro_alunos[indice]['nota2'] <= menor_nota:
+                maior_nota = cadastro_alunos[indice]['nota2']
+
+
+print(10 * ' ', 'Cadastro De Alunos')
+numero_de_cadastros = int(input('Informe o número de alunos a ser cadastrado: '))
 
 # Desafio 106 Faça um mini-sistema que utilize o interactive Help do Python. O usuário vai digitar a palavra 'Fim',
 # o programa se encerrará. OBS: Use cores

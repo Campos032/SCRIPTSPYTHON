@@ -1,4 +1,4 @@
-# Os operadores em python são +(Soma) -(Subtração) *(Multiplicação) /(Divisão que retorna um número float) **(Potência) 
+# Os operadores em python são +(Soma) -(Subtração) *(Multiplicação) /(Divisão que retorna um número float) **(Potência)
 # //(Divisão inteira 5//2=2) %(Divide e Retorna o Resto)
 # Ordem de precedência (), (**), (* / // %), (+-).
 

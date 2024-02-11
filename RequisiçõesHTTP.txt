@@ -1,0 +1,39 @@
+As requisições são a base do protocolo HTTP (Hypertext Transfer Protocol), que é o protocolo padrão para comunicação
+entre clientes (como navegadores da web) e servidores (como servidores web). Existem vários tipos de requisições HTTP,
+cada uma com um propósito específico. Abaixo estão os principais tipos de requisição HTTP e uma breve descrição de cada
+ um:
+
+GET:
+A requisição GET é usada para solicitar dados de um recurso específico no servidor.
+É usada para recuperar informações de um recurso, como uma página da web ou um arquivo.
+Os parâmetros da requisição GET são anexados à URL na forma de uma string de consulta (query string).
+
+POST:
+A requisição POST é usada para enviar dados para o servidor para serem processados.
+É comumente usado para enviar formulários da web e para enviar dados que serão processados e armazenados no servidor.
+Os dados são enviados no corpo da requisição, em vez de na URL.
+
+PUT:
+A requisição PUT é usada para enviar dados para um servidor para criar ou atualizar um recurso específico.
+É semelhante à requisição POST, mas é geralmente usada para atualizar um recurso existente, em vez de criar um novo
+recurso.
+
+DELETE:
+A requisição DELETE é usada para excluir um recurso específico do servidor.
+É usado para remover um recurso existente do servidor.
+
+PATCH:
+A requisição PATCH é usada para aplicar modificações parciais a um recurso existente no servidor.
+É usado quando você deseja atualizar apenas algumas partes de um recurso, em vez de substituí-lo completamente.
+
+HEAD:
+A requisição HEAD é semelhante à requisição GET, mas retorna apenas os cabeçalhos da resposta HTTP, sem o corpo da
+resposta. É usado para obter informações sobre um recurso, como metadados, sem recuperar todo o conteúdo do recurso.
+
+OPTIONS:
+A requisição OPTIONS é usada para obter informações sobre as opções de comunicação disponíveis para um determinado
+recurso ou servidor. É usado para verificar quais métodos HTTP são suportados por um servidor, bem como para obter
+informações sobre quais cabeçalhos ou origens são permitidos em uma solicitação.
+
+Estes são os principais tipos de requisição HTTP e seus propósitos. Cada tipo de requisição tem seu uso específico e é
+importante entender quando e como usar cada um deles ao desenvolver aplicativos web.

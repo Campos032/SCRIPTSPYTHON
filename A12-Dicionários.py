@@ -62,5 +62,6 @@ def ex5():
             print(v, end=' ')
         print()
 
+
 lista = [{'carlos': 2}]
 print(lista[0]['carlos'])

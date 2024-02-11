@@ -53,7 +53,9 @@ def aluno_aprovacao():
 
 # Desafio 91 Crie um programa onde 4 jogadores joguem um dado e tenham resultados aleatórios. Guarde esses resultados
 # em um dicionário. No final, coloque esse dicionário em ordem, sabendo que o vencedor tirou o maior número do dado.
-def jogo_dado():
+
+# Minha Solução
+def jogo_dado(): # Não consegui resolver
     jogadas = dict()
     listajogadas = list()
     ordem = list()

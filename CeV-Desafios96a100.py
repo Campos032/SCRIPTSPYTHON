@@ -31,7 +31,7 @@ def escreva_g():
 # contagem Seu programa tem que realizar três contagens através da função criada: A - De 1 até 10, a cada 1 B - De
 # 10 até 0, a cada 2 C - Uma contagem personalizada.
 def contagem_g():
-    def contagem(inicio, fim, passo):
+    def contagem(inicio=0, fim=0, passo=0):
         for num in range(1, 11, 1):
             print(num, end=' ')
         print()
@@ -46,7 +46,7 @@ def contagem_g():
         print()
 
     print(4 * ' ', 'Contagem')
-    contagem(0, 0, 0)
+    contagem()
 
 
 # Desafio 99 Faça um programa que tenha uma função chamada maior(), que receba vários parâmetros com valores inteiros.
@@ -94,5 +94,3 @@ def sorteio_e_par():
             if numero % 2 == 0:
                 soma_pares += numero
         print(f'A soma dos números pares é {soma_pares}.')
-
-    somar_par()
