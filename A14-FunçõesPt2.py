@@ -1,6 +1,6 @@
 # Interactive Help(Ajuda interativa)
 # help()  # Usado para acessar a funcionalidade de algo no python, help inicia um terminal exclusivo, para sair digite
-# quit ou help(print), help(input) ou print(input.__doc__)
+# quit
 
 
 # Docstrings(String de documentação)

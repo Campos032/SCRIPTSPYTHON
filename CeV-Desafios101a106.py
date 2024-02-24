@@ -1,6 +1,7 @@
 # Desafio 101 Crie um programa que tenha uma função chamada voto() que vai receber como parâmetro o ano
 #  de nascimento de uma pessoa, retornando um valor literal indicando se uma pessoa tem voto Negado, Opcional 
 # ou Obrigatório nas eleições
+import pydoc
 from datetime import datetime
 
 
@@ -99,9 +100,45 @@ def notas_g():
             if cadastro_alunos[indice]['nota2'] <= menor_nota:
                 maior_nota = cadastro_alunos[indice]['nota2']
 
+    print(10 * ' ', 'Cadastro De Alunos')
+    numero_de_cadastros = int(input('Informe o número de alunos a ser cadastrado: '))
 
-print(10 * ' ', 'Cadastro De Alunos')
-numero_de_cadastros = int(input('Informe o número de alunos a ser cadastrado: '))
 
 # Desafio 106 Faça um mini-sistema que utilize o interactive Help do Python. O usuário vai digitar a palavra 'Fim',
 # o programa se encerrará. OBS: Use cores
+cores = {"branco": '\033[0;30m',
+         "vermelho": '\033[0;31m',
+         "verde": '\033[0;32m',
+         "amarelo": '\033[0;33m',
+         "azul": '\033[34m',
+         "roxo": '\033[0;35m',
+         "azul-claro": '\033[0;36m',
+         "cinza": '\033[0;37m',
+         "fundo-branco": '\033[0;40m',
+         "fundo-vermelho": '\033[0;41m',
+         "fundo-verde": '\033[0;42m',
+         "fundo-amarelo": '\033[0;43m',
+         "fundo-azul": '\033[0;44m',
+         "fundo-roxo": '\033[0;45m',
+         "fundo-azul-claro": '\033[0;46m',
+         "fundo-cinza": '\033[0;47m',
+         "termina": '\033[m',
+         "preto-e-branco": '\033[7;30m'}
+
+
+def ajuda_interativa():
+    while True:
+        print(cores["fundo-verde"], 31 * '=')
+        print(3 * ' ', f'Ajuda Interativa PyHelp')
+        print(31 * '=')
+        choice = str(input(f'{cores["termina"]}Função ou Biblioteca: '))
+        if choice in ['fim', 'FIM']:
+            break
+        print(cores["fundo-azul"], 32 * '<')
+        print(7 * ' ', f'Documentação {choice.upper()}')
+        print(32 * '>')
+        print(cores["fundo-branco"])
+        help(choice)
+
+
+ajuda_interativa()

@@ -1,0 +1,14 @@
+Modularização
+- Surgiu no início da década de 60
+- Sistemas ficando cada vez maiores
+- Foco: Dividir um programa grande
+- Foco: Aumentar a legibilidade
+- Foco: Facilitar a manutenção
+
+Vantagens
+- Organização do código
+- Facilidade na manutenção
+- Ocultação de código detalhado
+- Reutilização em outros projetos
+
+Obs: Todas as pastas em um projeto PYTHON que você deseja exportar alguma funcionalidade deve possuir o arquivo __init__.py
