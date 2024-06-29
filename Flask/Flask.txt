@@ -1,0 +1,4 @@
+Introdução ao Flask
+O que é Flask?
+Flask é um microframework para desenvolvimento web em Python. É chamado de "micro" porque mantém o núcleo do framework
+simples, mas é extensível com diversas bibliotecas e plugins para adicionar funcionalidades conforme necessário.

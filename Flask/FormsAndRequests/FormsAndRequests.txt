@@ -1,0 +1,34 @@
+# 3. Formulários e Requisições
+# Para manipular dados de formulários e requisições HTTP, usamos o objeto request.
+
+# Exemplo de Formulário:
+<!doctype html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+
+# No código Python:
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        return f"Username: {username}, Password: {password}"
+    return render_template('login.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+# Aqui, ao submeter o formulário, os dados são enviados via POST para a rota /login.

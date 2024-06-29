@@ -1,0 +1,23 @@
+# 4. Blueprints
+# Blueprints permitem modularizar a aplicação em componentes menores e reutilizáveis.
+
+# Exemplo:
+# Crie um blueprint em um arquivo admin.py:
+from flask import Blueprint
+
+admin = Blueprint('admin', __name__)
+
+@admin.route('/admin')
+def admin_home():
+    return "Admin Home"
+
+# No arquivo principal da aplicação:
+from flask import Flask
+from admin import admin
+
+app = Flask(__name__)
+app.register_blueprint(admin)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+# Agora, acessar /admin exibirá "Admin Home".

@@ -1,0 +1,26 @@
+# 2. Templates
+# Flask usa o motor de template Jinja2 para renderizar HTML. Isso permite criar páginas dinâmicas.
+# Exemplo:
+# Crie uma pasta templates e um arquivo hello.html dentro dela:
+<!doctype html>
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+    <h1>Hello, {{ name }}!</h1>
+</body>
+</html>
+
+# No código Python, use render_template para renderizar o template:
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/hello/<name>')
+def hello(name):
+    return render_template('hello.html', name=name)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+# Quando acessar /hello/john, a página exibirá "Hello, john!".

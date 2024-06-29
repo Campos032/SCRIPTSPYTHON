@@ -1,0 +1,13 @@
+# 5. Middleware
+# Middleware são funções que processam requisições ou respostas antes de chegar à rota, ou após a rota ser executada.
+
+# Exemplo:
+@app.before_request
+def before_request():
+    print("Before request")
+
+@app.after_request
+def after_request(response):
+    print("After request")
+    return response
+# A função before_request é executada antes de qualquer requisição, e after_request após a resposta ser gerada.
