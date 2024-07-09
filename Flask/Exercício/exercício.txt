@@ -1,0 +1,22 @@
+Exercício em Flask: Sistema de Controle de Tarefas
+Descrição do Projeto:
+Vamos criar uma aplicação Flask para gerenciar tarefas. Esta aplicação deve ter as seguintes funcionalidades:
+
+Blueprints: Utilize blueprints para estruturar sua aplicação de forma modular.
+
+Middleware: Implemente um middleware simples para registrar informações sobre as requisições HTTP.
+
+Autenticação e Autorização: Implemente autenticação básica usando Flask-Login e autorização para permitir que apenas usuários autenticados possam criar, visualizar, editar e deletar tarefas.
+
+Templates e Formulários: Use templates Jinja2 para renderizar páginas HTML e crie formulários para permitir que os usuários façam login, criem novas tarefas e editem tarefas existentes.
+
+Requests: Trate requests HTTP para processar dados de formulários e realizar operações no sistema de controle de tarefas.
+
+Requisitos:
+Página inicial: Deve exibir todas as tarefas cadastradas.
+Cadastro de Tarefa: Deve permitir que usuários autenticados criem novas tarefas.
+Edição de Tarefa: Deve permitir que usuários autenticados editem tarefas existentes.
+Exclusão de Tarefa: Deve permitir que usuários autenticados excluam tarefas.
+Login e Logout: Deve permitir que usuários façam login e logout usando autenticação básica.
+Autenticação: Use Flask-Login para gerenciar o login e logout dos usuários.
+Autorização: Apenas usuários autenticados devem poder criar, editar e excluir tarefas.
