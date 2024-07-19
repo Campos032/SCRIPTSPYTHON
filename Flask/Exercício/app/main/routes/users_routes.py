@@ -6,7 +6,7 @@ from app.errors.error_handler import handler_error
 users_route_bp = Blueprint("users_route", __name__)
 
 
-@users_route_bp.route("/users", methods=["POST"])
+@users_route_bp.route("/users/create", methods=["POST"])
 def create_user():
     try:
         http_request = HttpRequest(body=request.json)

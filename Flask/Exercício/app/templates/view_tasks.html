@@ -1,20 +1,47 @@
-<!-- view_tasks.html -->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks</title>
-</head>
-<body>
-    <h1>Listagem de Tarefas</h1>
+{% block title %}Sistema de Tarefas - View Tasks{% endblock %}
 
-    <ul>
-        {% for task in tasks_list %}
-        <li>Id: {{ task.task_id }} - Tarefa: {{ task.tarefa }} - Descrição: {{ task.description }}</li>
-        {% endfor %}
-    </ul>
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
 
-</body>
-</html>
+{% block header %}
+    {% if logged %}
+        <a href="{{ url_for('pages_route.home_page') }}">Tasks SYS</a>
+        <img src="https://via.placeholder.com/80" alt="Foto de Perfil">
+        <a>
+            <img src="{{ url_for('static', filename='assets/home-icon.svg') }}">
+        </a>
+    {% else %}
+        <a href="{{ url_for('pages_route.home_page') }}">Tasks SYS</a>
+        <img src="https://via.placeholder.com/80" alt="Foto de Perfil">
+        <a href="{{ url_for('pages_route.login_register_page') }}">
+            Login/Register
+        </a>
+        <a>
+            <img src="{{ url_for('static', filename='assets/home-icon.svg') }}">
+        </a>
+    {% endif %}
+{% endblock %}
+
+{% block main_section %}
+    {% if tasks %}
+        <table>
+            <caption>Tarefas Cadastradas</caption>
+            <tr>
+                <th>Tarefa</th>
+                <th>Descrição</th>
+            </tr>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.tarefa }}</td>
+                    <td>{{ task.description }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nenhuma tarefa cadastrada.</p>
+    {% endif %}
+{% endblock %}

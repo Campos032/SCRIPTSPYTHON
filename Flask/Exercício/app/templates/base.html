@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <section>
+        {% block main_section %}{% endblock %}
+    </section>
+    <footer id="footer">
+        {% block footer %}
+        &copy; Copyright 2024 by <a href="http://domain.invalid/">Campos CIA</a>.
+        {% endblock %}
+    </footer>
+</body>
+</html>

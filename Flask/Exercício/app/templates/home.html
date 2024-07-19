@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Sistema de Tarefas - HOME{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block header %}
+    <header>
+        <nav>
+            <a href="{{ url_for('pages_route.home_page') }}">Tasks SYS</a>
+            {% if logged %}
+                <!-- <img src="https://via.placeholder.com/80" alt="Foto de Perfil"> -->
+                <!-- <a><img src="{{ url_for('static', filename='assets/home-icon.svg') }}"></a> -->
+            {% else %}
+                <a href="{{ url_for('pages_route.login_register_page') }}">Login/Register</a>
+                <!-- <img src="https://via.placeholder.com/80" alt="Foto de Perfil"> -->
+                <!-- <a><img src="{{ url_for('static', filename='assets/home-icon.svg') }}"></a> -->
+            {% endif %}
+        </nav>
+    </header>
+{% endblock %}
+
+{% block main_section %}
+    <main>
+        {% if tasks %}
+            <table>
+                <caption>Tarefas Cadastradas</caption>
+                <tr>
+                    <th>Tarefa</th>
+                    <th>Descrição</th>
+                </tr>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.tarefa }}</td>
+                        <td>{{ task.description }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>Nenhuma tarefa cadastrada.</p>
+        {% endif %}
+    </main>
+{% endblock %}
