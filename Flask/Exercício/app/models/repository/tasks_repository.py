@@ -30,26 +30,43 @@ class TasksRepository:
                 database.session.rollback()
                 raise exception
 
+    def edit_task(self, task_info: Dict) -> Dict:
+        with db_connection_handler as database:
+            try:
+                task_for_update = database.session.query(Tasks).filter_by(task_id=task_info["task_id"]).first()
+                
+                if not task_for_update:
+                    raise NoResultFound("Tarefa Não Encontrada!")
+                
+                task_for_update.tarefa = task_info["tarefa"]
+                task_for_update.description = task_info["description"]
+                
+                database.session.commit()
+            
+            except Exception as exception:
+                database.session.rollback()
+                raise exception
+
     def get_all_tasks(self):
         with db_connection_handler as database:
             tasks = database.session.query(Tasks).all()
 
             if not tasks:
-                raise HttpNotFoundError("Nada Encontrado!")
+                raise NoResultFound("Nada Encontrado!")
 
             return tasks
-
-            # # Converter objetos Tasks para um formato que possa ser renderizado no Jinja2
-            # tasks_list = []
-            # for task in tasks:
-            #     task_dict = {
-            #         "task_id": task.task_id,
-            #         "tarefa": task.tarefa,
-            #         "description": task.description,
-            #         # Adicione outros atributos conforme necessário
-            #     }
-            #     tasks_list.append(task_dict)
-            # print(tasks_list)
-            # return tasks_list
-
-    
+        
+    def remove_task(self, task_info: Dict) -> Dict:
+        with db_connection_handler as database:
+            try:
+                task_for_remove = database.session.query(Tasks).filter_by(task_id=task_info["task_id"]).first()
+                
+                if not task_for_remove:
+                    raise NoResultFound("Tarefa Não Encontrada!")
+                
+                database.session.delete(task_for_remove)
+                database.session.commit()
+            
+            except Exception as exception:
+                database.session.rollback()
+                raise exception
