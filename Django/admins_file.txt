@@ -1,0 +1,183 @@
+A pasta admin.py em um aplicativo Django é usada para registrar os modelos da sua aplicação no site de administração do Django.
+Isso permite que você gerencie o conteúdo do seu site através de uma interface gráfica fornecida pelo Django Admin. Abaixo, 
+você verá um exemplo de como configurar o arquivo admin.py:
+
+Exemplo de admin.py
+Vamos supor que você tenha um modelo chamado Task no seu aplicativo app1.
+
+# app1/models.py
+
+from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
+
+Agora, vamos registrar este modelo no Django Admin no arquivo admin.py.
+
+# app1/admin.py
+
+from django.contrib import admin
+from .models import Task
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'completed')
+    search_fields = ('title', 'description')
+    list_filter = ('completed',)
+    ordering = ('title',)
+
+admin.site.register(Task, TaskAdmin)
+
+
+Descrição das Configurações
+Importar Admin e Modelos: Primeiro, você precisa importar o módulo admin do Django e os modelos que deseja registrar.
+
+Registrar o Modelo: Use a função admin.site.register() para registrar o modelo. O segundo argumento opcional permite personalizar
+ a interface de administração.
+
+Personalizar a Interface de Administração:
+
+list_display: Campos a serem exibidos na lista de itens.
+search_fields: Campos que serão usados para a busca.
+list_filter: Campos para filtros na barra lateral.
+ordering: Define a ordem padrão dos itens.
+Outros Recursos do Django Admin
+Além do básico acima, o Django Admin permite configurações mais avançadas, como:
+
+Inlines: Permitem a edição de objetos relacionados diretamente no formulário de um objeto pai.
+Actions Personalizadas: Você pode definir ações personalizadas que podem ser executadas em múltiplos itens de uma vez.
+Formulários Personalizados: Permitem customizar os formulários usados na interface de administração.
+
+
+Exemplo Avançado com Inlines e Ações Personalizadas
+Vamos adicionar mais um modelo chamado Comment que está relacionado ao Task.
+
+# app1/models.py
+
+from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+    task = models.ForeignKey(Task, related_name='comments', on_delete=models.CASCADE)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+
+
+Agora, vamos adicionar um inline e uma ação personalizada no admin.py.
+# app1/admin.py
+
+from django.contrib import admin
+from .models import Task, Comment
+
+class CommentInline(admin.TabularInline):
+    model = Comment
+    extra = 1
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'completed')
+    search_fields = ('title', 'description')
+    list_filter = ('completed',)
+    ordering = ('title',)
+    inlines = [CommentInline]
+
+    actions = ['mark_as_completed']
+
+    def mark_as_completed(self, request, queryset):
+        queryset.update(completed=True)
+    mark_as_completed.short_description = 'Marcar tarefas selecionadas como concluídas'
+
+admin.site.register(Task, TaskAdmin)
+admin.site.register(Comment)
+
+Inlines
+Inlines permitem que você edite objetos relacionados diretamente no formulário de um objeto pai. No exemplo, adicionamos um modelo
+ Comment relacionado ao modelo Task. A classe CommentInline permite que você edite comentários diretamente na página de detalhes
+  da tarefa.
+
+# app1/admin.py
+
+from django.contrib import admin
+from .models import Task, Comment
+
+class CommentInline(admin.TabularInline):
+    model = Comment
+    extra = 1
+
+TabularInline: Exibe os objetos relacionados em uma tabela.
+
+model: Especifica o modelo relacionado que será incluído inline (neste caso, Comment).
+
+extra: Define o número de formulários vazios para adicionar ao formulário inline. Aqui, está definido como 1, então sempre haverá
+ um formulário vazio adicional para adicionar um novo comentário.
+
+
+Personalização da Interface de Administração
+A classe TaskAdmin é configurada para personalizar como o modelo Task é exibido e gerenciado no Django Admin.
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'completed')
+    search_fields = ('title', 'description')
+    list_filter = ('completed',)
+    ordering = ('title',)
+    inlines = [CommentInline]
+    actions = ['mark_as_completed']
+
+list_display: Especifica os campos do modelo Task que serão exibidos na lista de tarefas.
+
+search_fields: Adiciona uma barra de busca que permite pesquisar tarefas pelos campos title e description.
+
+list_filter: Adiciona filtros na barra lateral para filtrar tarefas com base no campo completed.
+
+ordering: Define a ordenação padrão dos itens na lista de tarefas.
+
+inlines: Inclui o inline CommentInline, permitindo editar os comentários diretamente na página de detalhes da tarefa.
+
+actions: Define ações personalizadas que podem ser executadas em múltiplos itens de uma vez.
+
+
+Ação Personalizada
+A ação mark_as_completed permite que o administrador marque várias tarefas como concluídas de uma vez.
+
+def mark_as_completed(self, request, queryset):
+    queryset.update(completed=True)
+mark_as_completed.short_description = 'Marcar tarefas selecionadas como concluídas'
+
+mark_as_completed: Este método pega um queryset (conjunto de tarefas selecionadas) e atualiza o campo completed para True em todas
+as tarefas do queryset.
+
+short_description: Define a descrição curta da ação que será exibida no menu de ações do Django Admin.
+
+Registro dos Modelos
+Finalmente, registramos os modelos Task e Comment no Django Admin.
+
+admin.site.register(Task, TaskAdmin)
+admin.site.register(Comment)
+admin.site.register(Task, TaskAdmin): Registra o modelo Task com a configuração personalizada TaskAdmin.
+admin.site.register(Comment): Registra o modelo Comment com a configuração padrão do Django Admin.
+
+Resumo
+Com essas configurações avançadas:
+Inlines permitem editar objetos relacionados (como comentários) diretamente na página de detalhes do objeto pai (tarefas).
+Ações Personalizadas permitem realizar operações em lote, como marcar várias tarefas como concluídas.
+Personalização da Interface torna a administração de dados mais eficiente e adaptada às necessidades específicas do seu projeto.
+Esses recursos tornam o Django Admin uma ferramenta poderosa para gerenciar dados complexos de forma intuitiva e eficiente.
+
+
+
+
+
+

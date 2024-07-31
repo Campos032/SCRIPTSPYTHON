@@ -1,0 +1,74 @@
+No Django, o arquivo urls.py em cada aplicativo e na raiz do projeto define o roteamento de URLs, ou seja, como as URLs das 
+solicitações HTTP são mapeadas para as funções ou classes que as processam. Aqui está uma breve explicação sobre como funciona o 
+urls.py:
+
+Como Funciona o urls.py no Django
+
+Definição de Roteamento:
+O urls.py especifica como as URLs são mapeadas para as views. Cada URL é associada a uma view específica que processa a 
+solicitação e retorna uma resposta.
+Componentes do urls.py:
+
+Importações:
+Você importa funções ou classes de views que vão lidar com as solicitações.
+from django.urls import path
+from . import views
+
+Definição de Padrões de URL:
+Você define uma lista chamada urlpatterns que mapeia URLs para views. Cada entrada na lista é uma instância da função path() ou 
+re_path(), que define um padrão de URL e a view associada.
+urlpatterns = [
+    path('', views.index, name='index'),  # Mapeia a URL raiz para a view 'index'
+    path('create/', views.create_user, name='create_user'),  # Mapeia a URL 'create/' para a view 'create_user'
+]
+
+Como Funciona o Roteamento:
+Processamento de Solicitações: Quando uma solicitação HTTP é recebida, o Django verifica o padrão de URL que corresponde à 
+solicitação. Ele usa o primeiro padrão que combina com a URL da solicitação.
+
+Chamada da View: Após encontrar a correspondência, o Django chama a view associada e passa a solicitação HTTP para ela.
+
+Resposta: A view processa a solicitação e retorna uma resposta, que pode ser um HTML, JSON, ou outro tipo de conteúdo.
+
+Exemplo de urls.py em um Aplicativo:
+# myapp/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),  # URL para a página inicial
+    path('create/', views.create_user, name='create_user'),  # URL para criar um novo usuário
+]
+
+
+Exemplo de urls.py na Raiz do Projeto:
+# myproject/urls.py
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),  # URL para o admin do Django
+    path('users/', include('myapp.urls')),  # Inclui URLs do aplicativo 'myapp'
+]
+
+
+Vantagens do urls.py no Django
+Organização: Mantém o roteamento de URLs organizado e separado por aplicativos.
+Modularidade: Permite dividir o roteamento em arquivos urls.py específicos para cada aplicativo, facilitando a manutenção e 
+expansão.
+Flexibilidade: Oferece flexibilidade para definir URLs dinâmicas e padrões complexos, e para incluir URLs de aplicativos de 
+terceiros.
+
+
+Conclusão
+O arquivo urls.py no Django é essencial para o roteamento de URLs. Ele define como as URLs são associadas a views específicas 
+e gerencia o fluxo de solicitações e respostas em sua aplicação Django. Esse sistema de roteamento proporciona uma maneira 
+organizada e flexível de controlar o comportamento de sua aplicação web.
+
+
+
+
+
+

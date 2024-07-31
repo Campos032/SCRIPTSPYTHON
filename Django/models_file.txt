@@ -1,0 +1,77 @@
+No Django, o arquivo models.py em cada aplicativo contém as definições das suas tabelas de banco de dados, representadas como
+classes Python. Essas classes são conhecidas como modelos e herdam de django.db.models.Model. Cada modelo corresponde a uma 
+tabela no banco de dados, e cada atributo do modelo corresponde a uma coluna na tabela.
+
+Como Funciona um Modelo no Django
+
+Definição de Classes:
+Cada classe no models.py representa uma tabela no banco de dados.
+Os atributos da classe representam as colunas da tabela.
+
+Tipos de Campos:
+Django fornece uma variedade de tipos de campo que especificam o tipo de dado armazenado no banco de dados (por exemplo, 
+CharField para texto, IntegerField para números inteiros).
+
+Migrações:
+Quando você cria ou altera modelos, Django usa migrações para refletir essas mudanças no banco de dados.
+Exemplo de Modelo
+Vamos criar um exemplo de modelo Task para representar uma tabela de tarefas.
+
+# tasks/models.py
+
+from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+Componentes do Modelo:
+Classe Task: Representa a tabela de tarefas.
+
+Atributos do Modelo:
+title: Uma coluna de texto com no máximo 100 caracteres.
+description: Uma coluna de texto sem limite de caracteres.
+completed: Uma coluna booleana indicando se a tarefa foi concluída.
+created_at e updated_at: Colunas de data e hora que registram quando a tarefa foi criada e atualizada, respectivamente.
+Método __str__: Define a representação em string do objeto, útil para visualização.
+
+Criação e Aplicação de Migrações
+
+Criar Migrações:
+Depois de definir ou modificar seus modelos, você cria uma migração para refletir essas mudanças no banco de dados:
+python manage.py makemigrations
+
+Aplicar Migrações:
+Para aplicar as migrações e atualizar o esquema do banco de dados:
+python manage.py migrate
+
+Consultas e Manipulação de Dados
+Depois de definir os modelos e aplicar as migrações, você pode criar, ler, atualizar e excluir registros do banco de dados 
+usando o ORM (Object-Relational Mapping) do Django.
+
+Exemplo de Criação e Consulta de Tarefas
+
+# Criação de uma nova tarefa
+task = Task.objects.create(title='Study Django', description='Learn how to use models in Django', completed=False)
+
+# Consulta de todas as tarefas
+all_tasks = Task.objects.all()
+
+# Filtro de tarefas concluídas
+completed_tasks = Task.objects.filter(completed=True)
+
+Vantagens dos Modelos no Django
+Abstração: Você interage com o banco de dados usando código Python, sem precisar escrever SQL manualmente.
+Consistência: Modelos garantem que o esquema do banco de dados seja consistente com suas definições de modelo.
+Facilidade de Uso: Django ORM facilita a criação, leitura, atualização e exclusão de registros.
+
+Conclusão
+Os modelos no Django são a representação das tabelas do banco de dados em forma de classes Python. Eles fornecem uma maneira 
+poderosa e fácil de trabalhar com dados persistentes, abstraindo a complexidade do SQL e oferecendo uma interface amigável para 
+o desenvolvimento.

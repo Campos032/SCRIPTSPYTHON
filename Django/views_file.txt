@@ -1,0 +1,77 @@
+No Django, o arquivo views.py em cada aplicativo contém as funções ou classes que processam as requisições HTTP e retornam 
+respostas. Essas funções ou classes são chamadas de "visões" (views) e são responsáveis por gerar o conteúdo dinâmico que será e
+xibido ao usuário.
+
+Função do views.py
+
+Processamento de Requisições:
+As visões recebem requisições HTTP (GET, POST, etc.), processam os dados da requisição e retornam uma resposta.
+Podem retornar HTML renderizado, JSON, arquivos ou qualquer outro tipo de resposta.
+
+Interação com Modelos:
+As visões frequentemente interagem com os modelos (models.py) para obter dados do banco de dados e passá-los ao template para 
+renderização.
+
+Redirecionamentos e Mensagens:
+Podem redirecionar o usuário para outras páginas e enviar mensagens de sucesso ou erro.
+Exemplos de Funções de Visão em views.py
+Exemplo Simples
+
+# app1/views.py
+
+from django.http import HttpResponse
+from django.shortcuts import render
+from .models import MyModel
+
+def index(request):
+    return HttpResponse("Hello, world!")
+
+def detail(request, id):
+    my_object = MyModel.objects.get(id=id)
+    return render(request, 'app1/detail.html', {'my_object': my_object})
+
+Componentes do Exemplo:
+
+index:
+Recebe um objeto request e retorna uma resposta HTTP simples com o texto "Hello, world!".
+Este é um exemplo básico para mostrar uma resposta direta.
+
+detail:
+Recebe um objeto request e um parâmetro id da URL.
+Usa o modelo MyModel para buscar um objeto com o id fornecido.
+Renderiza um template HTML (detail.html) passando o objeto encontrado como contexto.
+render(request, 'app1/detail.html', {'my_object': my_object}) combina o template com o contexto e retorna a resposta HTML.
+
+Visões Baseadas em Classe
+Além das visões baseadas em função, Django também oferece visões baseadas em classe, que permitem uma abordagem mais 
+estruturada e reutilizável. Exemplo:
+
+# app1/views.py
+
+from django.views.generic import ListView, DetailView
+from .models import MyModel
+
+class MyModelListView(ListView):
+    model = MyModel
+    template_name = 'app1/my_model_list.html'
+
+class MyModelDetailView(DetailView):
+    model = MyModel
+    template_name = 'app1/my_model_detail.html'
+
+Componentes do Exemplo:
+
+MyModelListView:
+Uma visão baseada em classe para listar todos os objetos do modelo MyModel.
+Usa o template my_model_list.html para renderizar a lista.
+
+MyModelDetailView:
+Uma visão baseada em classe para exibir detalhes de um único objeto do modelo MyModel.
+Usa o template my_model_detail.html para renderizar os detalhes do objeto.
+
+Resumo
+Funções de Visão: Processam requisições e retornam respostas. Podem retornar HTML renderizado, JSON, ou outros tipos de resposta.
+Interação com Modelos: Usam os modelos para acessar dados do banco de dados e passá-los para os templates.
+Visões Baseadas em Classe: Oferecem uma maneira mais estruturada e reutilizável de definir visões.
+O arquivo views.py é central para a lógica de processamento de requisições em um aplicativo Django, conectando as URLs definidas 
+em urls.py com a lógica de negócios e apresentação.

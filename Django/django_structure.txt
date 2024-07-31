@@ -1,0 +1,160 @@
+Estrutura Básica de um Projeto Django
+
+myproject/
+│
+├── myproject/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── app1/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── migrations/
+│   │   └── __init__.py
+│   └── templates/
+│       └── app1/
+│           └── index.html
+│
+├── app2/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── migrations/
+│   │   └── __init__.py
+│   └── templates/
+│       └── app2/
+│           └── index.html
+│
+├── templates/
+│   ├── base.html
+│   └── index.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       └── logo.png
+│
+├── manage.py
+├── requirements.txt
+└── .env
+
+No Django, a estrutura do projeto é organizada em uma pasta principal que contém a configuração do projeto e várias pastas 
+chamadas "aplicativos" (apps). Vamos explorar a estrutura básica de um projeto Django e entender o conceito de aplicativos.
+
+Componentes Principais
+
+myproject/: Diretório do projeto que contém a configuração global do projeto.
+
+settings.py: Configurações do projeto.
+urls.py: URLs principais do projeto.
+wsgi.py: Configuração para servir o projeto usando WSGI.
+asgi.py: Configuração para servir o projeto usando ASGI.
+
+app1/ e app2/: Diretórios dos aplicativos.
+
+init.py: Torna o diretório um pacote Python.
+admin.py: Registro de modelos no admin do Django.
+apps.py: Configuração do aplicativo.
+models.py: Modelos do banco de dados.
+tests.py: Testes do aplicativo.
+urls.py: URLs específicas do aplicativo.
+views.py: Lógica de apresentação (controladores).
+migrations/: Arquivos de migração para o banco de dados.
+templates/: Templates HTML específicos do aplicativo.
+
+Conceito de Aplicativos
+No Django, um aplicativo é um módulo Python independente que realiza uma tarefa específica. Você pode pensar em um aplicativo
+como um componente ou uma funcionalidade do seu projeto. Cada aplicativo é projetado para ser reutilizável em diferentes 
+projetos Django. Por exemplo:
+
+app1 pode ser um aplicativo para gerenciar usuários.
+app2 pode ser um aplicativo para gerenciar tarefas.
+app_auth pode ser um aplicativo para autenticação e autorização.
+
+Microserviços vs. Aplicativos Django
+Os aplicativos no Django não são exatamente microserviços. Enquanto os microserviços são arquiteturas onde cada serviço é uma
+aplicação independente que pode ser implantada e escalada separadamente, os aplicativos Django são partes de um único projeto
+e geralmente são executados no mesmo servidor e compartilham o mesmo banco de dados.
+
+Exemplos de Aplicativos
+app_usuarios/: Aplicativo para gerenciar usuários, contendo modelos para o usuário, views para registro, login, etc.
+app_tasks/: Aplicativo para gerenciar tarefas, contendo modelos para tarefas, views para criar, editar e listar tarefas.
+app_auth/: Aplicativo para autenticação e autorização, contendo views para login, logout, permissões, etc.
+
+Configuração dos Aplicativos
+Para adicionar um aplicativo ao seu projeto, você precisa registrá-lo no arquivo settings.py:
+
+# myproject/settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app1',
+    'app2',
+]
+
+templates/: Diretório para templates compartilhados entre os aplicativos.
+
+base.html: Template base que outros templates herdam.
+index.html: Um exemplo de template compartilhado.
+static/: Diretório para arquivos estáticos (CSS, JavaScript, imagens).
+
+css/style.css: Arquivo CSS.
+js/script.js: Arquivo JavaScript.
+images/logo.png: Imagem
+
+Ajuste na Configuração do Projeto
+Para usar essas pastas corretamente, você deve ajustar algumas configurações no arquivo settings.py do seu projeto:
+
+# myproject/settings.py
+import os
+
+# Caminhos para os templates
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+# Caminho para arquivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+Como os Aplicativos e Templates Interagem
+Aplicativos: Cada aplicativo (app1, app2) tem seus próprios templates dentro de app/templates/app_name/. Isso permite que cada 
+aplicativo tenha suas próprias páginas específicas.
+
+Templates Compartilhados: A pasta templates na raiz do projeto contém templates que podem ser compartilhados entre diferentes 
+aplicativos. O template base.html é geralmente o layout principal que outros templates herdam.
+
+Arquivos Estáticos: A pasta static na raiz do projeto contém arquivos estáticos que podem ser usados por todos os aplicativos.

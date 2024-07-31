@@ -1,0 +1,2 @@
+https://www.youtube.com/watch?v=4u0aI-90KnU
+https://www.w3schools.com/django/django_models.php
